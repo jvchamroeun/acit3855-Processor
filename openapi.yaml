@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  version: '2.0'
+  title: 'Event Statistics'
+  description: 'This is an API detailing a freight booking delivery'
+paths:
+  /stats:
+    get:
+      summary: gets events stats for truck deliveries
+      operationId: app.get_delivery_stats
+      description: Gets delivery stats
+      produces:
+      - application/json
+      responses:
+        200:
+          description: current stats
+          schema:
+            $ref: '#/definitions/DeliveryStats'
+        404:
+          description: stats do not exist
+definitions:
+  DeliveryStats:
+    type: object
+    required:
+    - num_booking_deliveries
+    - num_freights_assigned
+    - updated_timestamp
+    properties:
+      num_booking_deliveries:
+        type: integer
+        example: 120
+      num_freights_assigned:
+        type: integer
+        example: 120
+      updated_timestamp:
+        type: string
+        format: date-time
+        example: 2020-01-01T09:00:00
