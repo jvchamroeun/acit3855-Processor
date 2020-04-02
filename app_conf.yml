@@ -2,7 +2,7 @@ version: 1
 datastore:
   filename: data.json
 scheduler:
-  period_sec: 2
+  period_sec: 10
 eventstore:
   url1: http://localhost:8090/booking_details
   url2: http://localhost:8090/freight_assignment

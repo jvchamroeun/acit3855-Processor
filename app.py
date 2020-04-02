@@ -1,3 +1,5 @@
+from json import JSONDecodeError
+
 import connexion
 from connexion import NoContent
 import yaml
@@ -103,9 +105,10 @@ def get_delivery_stats():
 
 
 app = connexion.FlaskApp(__name__, specification_dir='')
+app.add_api("openapi.yaml")
 CORS(app.app)
 app.app.config['CORS_HEADERS'] = 'Content-Type'
-app.add_api("openapi.yaml")
+
 
 if __name__ == "__main__":
     init_scheduler()
