@@ -4,5 +4,5 @@ datastore:
 scheduler:
   period_sec: 10
 eventstore:
-  url1: ec2-52-43-100-165.us-west-2.compute.amazonaws.com:8090/booking_details
-  url2: ec2-52-43-100-165.us-west-2.compute.amazonaws.com:8090/freight_assignment
+  url1: http://ec2-52-43-100-165.us-west-2.compute.amazonaws.com:8090/booking_details
+  url2: http://ec2-52-43-100-165.us-west-2.compute.amazonaws.com:8090/freight_assignment
